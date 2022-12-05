@@ -33,7 +33,7 @@ const FriendProfile = ({ data, post }) => {
   const deleteUser = async () => {
     
     const response = await fetch(
-      process.env.REACT_APP_BASE_URL + `users/${data._id}/delete`,
+      process.env.REACT_APP_BASE_URL + `/users/${data._id}/delete`,
       {
         method: "delete",
         headers: {

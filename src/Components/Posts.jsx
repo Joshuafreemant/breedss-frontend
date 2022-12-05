@@ -46,7 +46,7 @@ const Posts = ({ post }) => {
 
     const handleDelete = async () => {
         const response = await fetch(
-            process.env.REACT_APP_BASE_URL + `posts/${post._id}/delete`,
+            process.env.REACT_APP_BASE_URL + `/posts/${post._id}/delete`,
             {
                 method: "delete",
                 headers: {
@@ -72,7 +72,7 @@ const Posts = ({ post }) => {
         formData.forEach((value, key) => object[key] = value);
         let json = JSON.stringify(object)
         const response = await fetch(
-            process.env.REACT_APP_BASE_URL + `posts/${post._id}/like`,
+            process.env.REACT_APP_BASE_URL + `/posts/${post._id}/like`,
             {
                 method: "PATCH",
                 body: json,
@@ -102,7 +102,7 @@ const Posts = ({ post }) => {
             formData.forEach((value, key) => object[key] = value);
             let json = JSON.stringify(object)
             const response = await fetch(
-                process.env.REACT_APP_BASE_URL + `posts/${post._id}/comment`,
+                process.env.REACT_APP_BASE_URL + `/posts/${post._id}/comment`,
                 {
                     method: "post",
                     body: json,
@@ -146,7 +146,7 @@ const Posts = ({ post }) => {
     const addFriend = async (e) => {
         e.preventDefault()
         const response = await fetch(
-            process.env.REACT_APP_BASE_URL + `users/${user._id}/${post.userId}`, {
+            process.env.REACT_APP_BASE_URL + `/users/${user._id}/${post.userId}`, {
             method: "put",
             // body:json,
             headers: {

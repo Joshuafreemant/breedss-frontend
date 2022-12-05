@@ -18,7 +18,7 @@ const Social = () => {
 
 
     const getPosts = async () => {
-        const fetchPosts = await fetch(process.env.REACT_APP_BASE_URL + 'posts', {
+        const fetchPosts = await fetch(process.env.REACT_APP_BASE_URL + '/posts', {
             method: 'get',
             headers: {
                 'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ const Social = () => {
         getPosts()
     }, [])
     const getNotifications = async () => {
-        const response = await fetch(process.env.REACT_APP_BASE_URL + `notifications/${user._id}`, {
+        const response = await fetch(process.env.REACT_APP_BASE_URL + `/notifications/${user._id}`, {
             method: 'get',
             headers: {
                 'Content-Type': 'application/json',

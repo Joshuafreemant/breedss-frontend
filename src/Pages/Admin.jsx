@@ -35,7 +35,7 @@ const Admin = () => {
         
 
         const savedUserResponse = await fetch(
-            process.env.REACT_APP_BASE_URL + 'auth/register/admin',
+            process.env.REACT_APP_BASE_URL + '/auth/register/admin',
             {
                 method: "POST",
                 body: JSON.stringify(values),

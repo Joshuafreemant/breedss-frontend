@@ -18,7 +18,7 @@ const Friend = () => {
     let [friendData, setFriendData] = useState('')
     let [friendPost, setFriendPost] = useState([])
     const getUser = async () => {
-        const response = await fetch(process.env.REACT_APP_BASE_URL + `users/${id}`, {
+        const response = await fetch(process.env.REACT_APP_BASE_URL + `/users/${id}`, {
             method: 'get',
             headers: {
                 'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ const Friend = () => {
     }
 
     const getUserPosts = async () => {
-        const response = await fetch(process.env.REACT_APP_BASE_URL + `posts/${id}/posts`, {
+        const response = await fetch(process.env.REACT_APP_BASE_URL + `/posts/${id}/posts`, {
             method: 'get',
             headers: {
                 'Content-Type': 'application/json',

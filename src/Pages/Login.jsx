@@ -21,7 +21,7 @@ const Login = () => {
         let json = JSON.stringify(object);
 
 
-        const savedUser = await fetch(process.env.REACT_APP_BASE_URL + 'auth/login', {
+        const savedUser = await fetch(process.env.REACT_APP_BASE_URL + '/auth/login', {
             method: 'POST',
             body: json,
             headers: {
