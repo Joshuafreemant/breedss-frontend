@@ -8,7 +8,7 @@ const Ads = ({slot}) => {
     window.adsbygoogle.push({})
   }, [])
   return (
-    <div className='ads-container w-[250px] overflow-hidden hidden lg:flex'>
+    <div className='ads-container w-[300px] overflow-hidden hidden lg:flex'>
       <ins class="adsbygoogle"
         style={{ width: "100%" }}
         data-ad-format="fluid"
