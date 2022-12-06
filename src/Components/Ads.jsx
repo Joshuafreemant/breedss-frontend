@@ -1,8 +1,8 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import googleAds from '../Images/googleAds.png'
 
 const Ads = ({slot}) => {
-  const { currentPath } = props
+  // const { currentPath } = props
   useEffect(() => {
     window.adsbygoogle = window.adsbygoogle || []
     window.adsbygoogle.push({})
