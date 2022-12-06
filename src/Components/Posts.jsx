@@ -23,6 +23,8 @@ const Posts = ({ post }) => {
     const posts = useSelector((state) => state?.posts)
     const token = useSelector((state) => state?.token)
 
+    console.log(user,'ggggggggg')
+
     const media = post?.picturePath;
     const splitMedia = media.split('.').pop();
     const ext = splitMedia.split('.').pop();

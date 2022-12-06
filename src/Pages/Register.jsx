@@ -7,6 +7,8 @@ import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 // import { setLogin } from "state";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const registerSchema = yup.object().shape({
     fullName: yup.string().required("required"),
@@ -48,11 +50,24 @@ const Register = () => {
         );
 
         const savedUser = await savedUserResponse.json();
-        onSubmitProps.resetForm();
 
-        if (savedUser) {
+
+        if (savedUser.error) {
+            if (savedUser.error.includes('duplicate key error collection')) {
+                let notify = () => {
+                    toast.error(('Email already in use'), {
+                        toastClassName: 'error'
+                    })
+                };
+                notify()
+            }
+
+        } else (
             navigate('/')
-        }
+
+        )
+        // onSubmitProps.resetForm();
+
     }
     const handleFormSubmit = async (values, onSubmitProps) => {
         await handleSubmit(values, onSubmitProps);
@@ -61,7 +76,8 @@ const Register = () => {
 
     return (
         <div className='register-body'>
-          
+            <ToastContainer />
+
             <Formik
                 onSubmit={handleFormSubmit}
                 initialValues={initialValuesRegister}
@@ -79,6 +95,7 @@ const Register = () => {
                 }) => (
                     <form className="form mt-20" onSubmit={handleSubmit}>
                         <div className="form-groups">
+            <p className='mb-3 texts-dark'>Fill all Fields</p>
                             <label htmlFor="Fullname"></label>
                             <input
                                 type="text"
@@ -164,7 +181,7 @@ const Register = () => {
                                     {!values.picture ? (
                                         <label htmlFor="avatar" className=' w-full flex items-center justify-between'>
                                             <img src={photo} alt="add avatar" width={40} height={40} />
-                                            <span className='font-normal'>Add Image avatar</span>
+                                            <span className='font-semibold texts-dark text-sm'>Add Image avatar</span>
                                         </label>
                                     ) : (
                                         <label htmlFor="avatar" className='w-full flex items-center justify-between'>

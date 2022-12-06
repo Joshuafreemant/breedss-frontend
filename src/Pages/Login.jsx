@@ -3,6 +3,10 @@ import { Link,useNavigate } from "react-router-dom";
 import {useDispatch} from 'react-redux'
 import { setLogin } from '../store/index';
 import HorizontalAds from '../Components/HorizontalAds';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Login = () => {
     const navigate = useNavigate()
     const dispatchs = useDispatch()
@@ -41,11 +45,21 @@ const Login = () => {
             }))
             navigate('/')
         }
-        console.log(loggedIn)
+       
+        else{
+            
+            let notify = () => {
+                toast.error((loggedIn.msg), {
+                  toastClassName: 'error'
+                })
+              };
+              notify()
+        }
     }
     
     return (
         <div className='login-body'>
+      <ToastContainer />
            
 
 

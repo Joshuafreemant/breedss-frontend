@@ -98,6 +98,7 @@ const Navbar = () => {
         dispatch(setPosts({ posts: posts.posts }))
         onSubmitProps.resetForm();
 
+        setTextField(false)
 
     }
     const handleFormSubmit = async (values, onSubmitProps) => {
@@ -309,9 +310,11 @@ const Navbar = () => {
                                                                     <button
                                                                         type="button"
 
-                                                                        className='rounded-3xl  text-center mt-4 py-3 px-8 text-white text-sm font-semibold bg-light'>
+                                                                        className=' rounded-3xl  text-center mt-4 py-3 px-8 text-white text-sm font-semibold bg-light'>
+                                                                        <p className='w-16 truncate'>
+                                                                            {values.picture.name}
 
-                                                                        {values.picture.name}
+                                                                        </p>
                                                                     </button>
                                                                 )}
                                                             </div>
@@ -450,7 +453,9 @@ const Navbar = () => {
 
                                 <button type='button' className='lg:hidden flex flex-col items-center justify-center text-white text-2xl' onClick={() => {
                                     dispatch(setLogout())
+                                    localStorage.removeItem("persist:root");
                                     navigate('/')
+
                                 }}> <BiLogOutCircle />
 
                                 </button>
