@@ -61,7 +61,7 @@ const Social = () => {
             <section className="social-home">
                 <div>
                     <Profile />
-                    <Ads />
+                    <Ads slot="8217530327568975"/>
 
                 </div>
 
@@ -92,7 +92,7 @@ const Social = () => {
 
                 <div>
                     <Friends />
-                    <Ads />
+                    <Ads slot="8217530327568975" />
 
                 </div>
 
