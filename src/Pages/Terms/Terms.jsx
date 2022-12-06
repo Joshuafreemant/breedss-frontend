@@ -73,7 +73,8 @@ export default function Terms() {
 
                     </div>
 
-            <HorizontalAds/>
+                    <HorizontalAds slot="8217530327568975"/>
+
 
                 </div>
 

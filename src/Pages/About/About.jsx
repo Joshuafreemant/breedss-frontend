@@ -44,7 +44,7 @@ export default function About() {
                         <p>(1949, Barbadian politician)</p>
 
                     </div>
-                    <HorizontalAds />
+                    <HorizontalAds slot="8217530327568975"/>
 
                 </div>
             </section>

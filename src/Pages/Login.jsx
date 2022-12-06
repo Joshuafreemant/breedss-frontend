@@ -105,7 +105,8 @@ const Login = () => {
 
             </form>
             <div className="">
-            <HorizontalAds/>
+            <HorizontalAds slot="8217530327568975"/>
+
 
             </div>
 

@@ -33,7 +33,8 @@ export default function How_to() {
                         <p>Pets of various kinds are displayed here, ranging from dogs, cats, to birds, guinea pigs, hamster, snakes, ferret, fish, rabbit, and more. There can be forums to discuss about feeding, accessorizing, training, health treatment and many more activities for pets. Where one or two persons can suggest or recommend the best feeding and treatment plans for pet.</p>
                         {/* <p>There is also an Ecommerce aspect that specifically deals with sales of all kinds of products for pets and actual pets for those who are interested in buying. There is also an adoption scheme for pets whose owner want to put them up.</p> */}
                     </div>
-            <HorizontalAds/>
+                    <HorizontalAds slot="8217530327568975"/>
+
 
                 </div>
 
