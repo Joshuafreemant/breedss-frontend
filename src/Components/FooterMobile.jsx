@@ -720,7 +720,7 @@ const FooterMobile = () => {
                 <nav className="flex">
 
 
-                    <div className="post__nav-profiles flex justify-between w-full px-8">
+                    <div className="post__nav-profiles flex justify-between w-full px-6">
 
                         <button  onClick={showFriend} className="flex flex-col items-center justify-center  text-white text-2xl user__link">
                             <FaUserFriends />

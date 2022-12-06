@@ -83,6 +83,10 @@ const Social = () => {
                     <br className='md:hidden' />
                     <br className='md:hidden' />
                     <br className='md:hidden' />
+                    <br className='md:hidden' />
+                    <br className='md:hidden' />
+                    <br className='md:hidden' />
+                    <br className='md:hidden' />
 
                 </div>
 
