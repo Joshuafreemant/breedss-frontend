@@ -109,7 +109,7 @@ const FooterMobile = () => {
         );
 
         const posts = await response.json();
-        dispatch(setPosts({ posts }))
+        dispatch(setPosts({ posts:posts.posts }))
         onSubmitProps.resetForm();
 
 
