@@ -8,7 +8,7 @@ const HorizontalAds = ({slot}) => {
     window.adsbygoogle.push({})
   }, [])
   return (
-    <div className='h-[200px] min-w-[250px] mb-12 flex justify-center items-center '>
+    <div className='h-[200px] w-[260px] md:w-full mb-12 flex justify-center items-center '>
       <ins class="adsbygoogle"
         style={{ width: "100%" }}
         data-ad-format="fluid"
