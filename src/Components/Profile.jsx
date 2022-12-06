@@ -42,7 +42,7 @@ const Profile = () => {
     formData.forEach((value, key) => object[key] = value);
     let json = JSON.stringify(object)
     const response = await fetch(
-      process.env.REACT_APP_BASE_URL + `/users/${user._id}`, {
+      process.env.REACT_APP_BASE_URL + `users/${user._id}`, {
       method: "put",
       body: json,
       headers: {

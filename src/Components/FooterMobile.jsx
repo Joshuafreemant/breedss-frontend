@@ -98,7 +98,7 @@ const FooterMobile = () => {
         formData.append("category", selected.name);
         formData.append("userId", user._id);
         const response = await fetch(
-            process.env.REACT_APP_BASE_URL + '/create',
+            process.env.REACT_APP_BASE_URL + 'create',
             {
                 method: "POST",
                 body: formData,
@@ -145,7 +145,7 @@ const FooterMobile = () => {
         formData.forEach((value, key) => object[key] = value);
         let json = JSON.stringify(object)
         const response = await fetch(
-            process.env.REACT_APP_BASE_URL + `/users/${user._id}`, {
+            process.env.REACT_APP_BASE_URL + `users/${user._id}`, {
             method: "put",
             body: json,
             headers: {

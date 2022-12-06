@@ -14,7 +14,7 @@ const Friends = () => {
 
 
     const getUsers = async () => {
-        const response = await fetch(process.env.REACT_APP_BASE_URL + '/users', {
+        const response = await fetch(process.env.REACT_APP_BASE_URL + 'users', {
             method: 'get',
             headers: {
                 'Content-Type': 'application/json',
