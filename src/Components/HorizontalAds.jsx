@@ -3,7 +3,7 @@ import React,{useEffect} from 'react'
 import googleAds from '../Images/googleAds.png'
 
 const HorizontalAds = ({slot}) => {
-  seEffect(() => {
+  useEffect(() => {
     window.adsbygoogle = window.adsbygoogle || []
     window.adsbygoogle.push({})
   }, [])
