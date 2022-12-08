@@ -1,6 +1,6 @@
 import React, { useEffect, memo, lazy, Suspense, } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Ads, Profile, Friends, FooterMobile } from '../Components/index'
+import { Advert, Profile, Friends, FooterMobile } from '../Components/index'
 import PostSkeleton from '../Components/PostSkeleton';
 import { setNotifications, setPosts } from '../store'
 
@@ -20,10 +20,10 @@ const Social = () => {
     const getPosts = async () => {
         const fetchPosts = await fetch(process.env.REACT_APP_BASE_URL + 'posts', {
             method: 'get',
-            mode:'cors',
+            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
-               'Access-Control-Allow-Origin' : '*',
+                'Access-Control-Allow-Origin': '*',
                 Authorization: `Bearer ${token}`
             }
         })
@@ -61,8 +61,9 @@ const Social = () => {
             <section className="social-home">
                 <div>
                     <Profile />
-                    <Ads/>
-                    
+                    <div className="h-24 w-[300px] rounded-md bg-white">
+                        <Advert slot="8217530327568975" googleAdId="ca-pub-8217530327568975" />
+                    </div>
 
                 </div>
 
@@ -93,7 +94,10 @@ const Social = () => {
 
                 <div>
                     <Friends />
-                    <Ads/>
+                    <div className="h-24 w-[300px] rounded-md bg-white">
+                        <Advert slot="8217530327568975" googleAdId="ca-pub-8217530327568975" />
+
+                    </div>
 
                 </div>
 

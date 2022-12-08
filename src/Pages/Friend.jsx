@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { setUser,setFriendPosts } from '../store';
 import { useDispatch, useSelector } from 'react-redux'
 import Social from './Social';
-import { Ads, Friends, Posts, Profile, FriendProfile, FooterMobile } from '../Components';
+import { Advert, Friends, Posts, Profile, FriendProfile, FooterMobile } from '../Components';
 import FullAds from '../Components/FullAds';
 
 const Friend = () => {
@@ -63,7 +63,7 @@ const Friend = () => {
                     <FriendProfile data={friendData?.user} post={friendPost} />
 
                     <div className="hidden md:block">
-                        <Ads />
+                        <Advert />
 
                     </div>
 
@@ -83,9 +83,9 @@ const Friend = () => {
 
                 </div>
 
-                <div className='hidden md:block'>
+                <div className='hidden md:block bg-white rounded-md'>
                     {/* <Friends /> */}
-                    <FullAds />
+                    <Advert slot="8217530327568975" googleAdId="ca-pub-8217530327568975" />
 
                 </div>
 

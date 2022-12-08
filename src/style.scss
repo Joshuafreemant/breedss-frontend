@@ -351,15 +351,22 @@ $lightBg: rgb(130, 144, 148);
     }
 }
 
-
+.adsbygoogle {
+    height: 23vh !important;
+    overflow: hidden !important;
+}
+.aswift_2_host{
+    height: 23vh !important;
+    overflow: hidden !important;
+}
 // for ads widget
 .ads-container {
     box-shadow: 0px 0px 1px 1px #ddd;
     background-color: #fff;
     flex: 1;
-    height: 23vh;
+    height: 23vh !important;
     position: relative;
-
+overflow: hidden !important;
     margin-bottom: 8px;
     // display: flex;
     justify-content: center;

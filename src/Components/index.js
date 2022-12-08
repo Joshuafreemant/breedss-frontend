@@ -1,4 +1,4 @@
-import Ads from './Ads'
+import Advert from './Advert'
 import Profile from './Profile'
 import Friends from './Friends'
 import Posts from './Posts'
@@ -9,7 +9,7 @@ import FriendProfile from './FriendProfile'
 import FooterMobile from './FooterMobile'
 
 export {
-    Ads,
+    Advert,
     Profile,
     Friends,
     FriendProfile,
