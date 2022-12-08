@@ -62,6 +62,7 @@ const Social = () => {
                 <div>
                     <Profile />
                     <Ads slot="8217530327568975"/>
+                    
 
                 </div>
 
@@ -70,7 +71,7 @@ const Social = () => {
                     {
                         sortedPost.reverse().map((post, i) => {
                             return (
-                                <Suspense fallback={<div><PostSkeleton /></div>}>
+                                <Suspense fallback={<div key={i}><PostSkeleton /></div>}>
                                     <Posts key={post._id} post={post} />
                                 </Suspense>
 

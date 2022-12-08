@@ -1,23 +1,24 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
+import AdSense from 'react-adsense';
 import googleAds from '../Images/googleAds.png'
 
-const Ads = ({slot}) => {
-  // const { currentPath } = props
+const Ads = () => {
   useEffect(() => {
-    // window.adsbygoogle = window.adsbygoogle || []
-    // window.adsbygoogle.push({})
+    window.adsbygoogle = window.adsbygoogle || []
+    window.adsbygoogle.push({})
   }, [])
-  return (
-    <div className='ads-container w-[300px] overflow-hidden hidden lg:flex'>
-      {/* <ins class="adsbygoogle"
-        style={{ width: "100%" }}
-        data-ad-format="fluid"
-        // data-ad-layout-key="-Yo-ur-la-yo-ut-ke-y"
-        data-ad-client="ca-pub-8217530327568975"
-        data-ad-slot={slot}
-        data-full-width-responsive="true">
-      </ins> */}
 
+  
+  return (
+    <div>
+
+  <AdSense
+     client="ca-pub-7640562161899788"
+     slot="7259870550"
+     data-adtest="on"
+     style={{ width: 500, height: 300 }}
+     format=""
+  />
     </div>
   )
 }
