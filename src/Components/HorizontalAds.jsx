@@ -1,25 +1,47 @@
-import React,{useEffect} from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import googleAds from '../Images/googleAds.png'
+class HorizontalAds extends Component {
+  googleInit = null;
 
-const HorizontalAds = ({slot}) => {
-  useEffect(() => {
-    // window.adsbygoogle = window.adsbygoogle || []
-    // window.adsbygoogle.push({})
-  }, [])
-  return (
-    <div className='h-[200px] w-[300px] md:w-full mb-12 flex justify-center items-center '>
-      {/* <ins class="adsbygoogle"
-        style={{ width: "100%" }}
-        data-ad-format="fluid"
-        // data-ad-layout-key="-Yo-ur-la-yo-ut-ke-y"
-        data-ad-client="ca-pub-8217530327568975"
-        data-ad-slot={slot}
-        data-full-width-responsive="true">
-      </ins> */}
+  componentDidMount() {
+    const { timeout } = this.props;
+    this.googleInit = setTimeout(() => {
+      if (typeof window !== 'undefined')
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+    }, timeout);
+  }
 
-    </div>
-  )
+  componentWillUnmount() {
+    if (this.googleInit) clearTimeout(this.googleInit);
+  }
+
+  render() {
+    const { classNames, slot, googleAdId, style, format } = this.props;
+    return (
+      <div className={classNames} >
+        <ins
+          className="adsbygoogle  "
+          style={style || { display: 'flex', textAlign: "center" }}
+          data-ad-client={googleAdId}
+          data-ad-slot={slot}
+          data-ad-test="on"
+          data-ad-format={format || "auto"}
+          data-full-width-responsive="true"
+        ></ins>
+      </div>
+    );
+  }
 }
+HorizontalAds.propTypes = {
+  classNames: PropTypes.string,
+  slot: PropTypes.string,
+  timeout: PropTypes.number,
+  googleAdId: PropTypes.string,
+};
+HorizontalAds.defaultProps = {
+  classNames: '',
+  timeout: 200,
+};
+export default HorizontalAds;
 
-export default HorizontalAds
