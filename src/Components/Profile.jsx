@@ -184,7 +184,7 @@ const Profile = () => {
                 :
                 <div className="user-info-stat">
             <h3>Follow</h3>
-            <h4 className='user-info-h4'>{user?.friends?.formattedFriends?.length || 0}</h4>
+            <h4 className='user-info-h4'>{user?.friends?.length || 0}</h4>
           </div>
 
             }

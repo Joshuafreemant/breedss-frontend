@@ -453,7 +453,6 @@ const Navbar = () => {
 
                                 <button type='button' className='lg:hidden flex flex-col items-center justify-center text-white text-2xl' onClick={() => {
                                     dispatch(setLogout())
-                                    localStorage.removeItem("persist:root");
                                     navigate('/')
 
                                 }}> <BiLogOutCircle />

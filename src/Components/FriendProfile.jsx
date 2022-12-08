@@ -8,11 +8,12 @@ import { Dialog, Transition } from '@headlessui/react'
 import { AiOutlineDelete } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
 
-
+//data from friend page
 const FriendProfile = ({ data, post }) => {
   const user = useSelector((state) => state.user)
   const dispatch = useDispatch()
   const token = useSelector((state) => state.token)
+  console.log(post, 'gghghgg')
 
   let navigate = useNavigate()
 
@@ -142,7 +143,7 @@ const FriendProfile = ({ data, post }) => {
 
           <div className="user-info-stat">
             <h3>Follow</h3>
-            <h4 className='user-info-h4'>{data?.friends?.formattedFriends?.length || 0}</h4>
+            <h4 className='user-info-h4'>{data?.friends?.length || 0}</h4>
           </div>
 
 

@@ -61,6 +61,26 @@ const FooterMobile = () => {
     let [textField, setTextField] = useState(false)
 
 
+
+    const [friendy, setFriendy] = useState(user.friends)
+    const [friendySearch, setFriendySearch] = useState(friendy)
+
+    useEffect(() => {
+        setFriendy(user.friends)
+        setFriendySearch(user.friends)
+    }, [user])
+
+    const handleSearch = (e) => {
+        let search = e.target.value.toLowerCase();
+        setFriendySearch(
+            friendy.filter((data) => {
+                return data.fullName.toLowerCase().includes(search.toLowerCase())
+            })
+        )
+    }
+
+
+
     const openBioField = () => {
         setBioField((prev) => !prev)
     }
@@ -358,7 +378,7 @@ const FooterMobile = () => {
                     className="w-full md:w-11/12  fixed flex justify-center items-center px-6 inset-0 z-10 overflow-y-auto"
                     onClose={closeModal}
                 >
-                    <div className="w-full xl:w-7/12 lg:w-7/12 md:w-8/12 min-h-screen px-4 text-center">
+                    <div className="w-full xl:w-7/12  lg:w-7/12 md:w-8/12 min-h-screen px-4 text-center">
                         <Transition.Child
                             as={Fragment}
                             enter="ease-out duration-300"
@@ -394,20 +414,20 @@ const FooterMobile = () => {
 
                                 <div className="bg-gray-100    rounded-lg">
                                     <div className='friends-container '>
-                                        {/* <div className='search-friends'>
+                                        <div className='search-friends'>
                                             <input type="text" name=""
                                                 id="searchP" autoFocus
                                                 className='search-friend-input'
                                                 placeholder="Search Friends..."
 
-                                            // onChange={handleSearch}
+                                            onChange={handleSearch}
                                             />
-                                        </div> */}
+                                        </div>
                                         <h3 className='font-lg text-bold mb-2'>Friends List</h3>
 
-                                        <div className="mobile-friends-box h-[290px] overflow-y-scroll">
+                                        <div className="mobile-friends-box h-[240px] overflow-y-scroll">
 
-                                            {user?.friends?.formattedFriends?.map((friend, i) => {
+                                            {friendySearch?.map((friend, i) => {
                                                 return (
 
                                                     <Link to={'/friend/' + friend?._id}>

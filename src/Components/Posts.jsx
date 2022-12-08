@@ -23,7 +23,6 @@ const Posts = ({ post }) => {
     const posts = useSelector((state) => state?.posts)
     const token = useSelector((state) => state?.token)
 
-    console.log(user,'ggggggggg')
 
     const media = post?.picturePath;
     const splitMedia = media.split('.').pop();
@@ -158,19 +157,17 @@ const Posts = ({ post }) => {
         );
         setComment('')
         const updatedUser = await response.json();
-        console.log(updatedUser)
-        dispatch(setFriends({ friends: updatedUser }))
+        dispatch(setFriends({ friends: updatedUser.userFriends.friends }))
 
     }
 
     // check maybe the friend is already added as part of the users friend
 
 
-    let userF = user?.friends?.formattedFriends?.filter(u => {
-        return u?._id?.includes(post?.userId)
-    })
-
-
+    let userF = []
+// user?.friends?.filter(u => {
+//     return u?.userId?.includes(post?.userId)
+// })
 
     return (
         <div >
@@ -392,20 +389,20 @@ const Posts = ({ post }) => {
                                                             </button> :
 
                                                             (
-                                                                userF?.length === 0 || userF === undefined ?
-                                                                    <button onClick={addFriend}
-                                                                        className={`${active ? 'bg-dark text-white' : 'text-gray-900'
-                                                                            } group gap-4 flex w-full font-medium items-center rounded-md px-2 py-2 text-sm`}
-                                                                    >
-                                                                        <AiOutlineUserAdd />
-                                                                        Add Friend
-                                                                    </button> :
+                                                                user.friends.filter(fri => (fri.userId === post.userId)).length ?
                                                                     <button onClick={addFriend}
                                                                         className={`${active ? 'bg-dark text-white' : 'text-gray-900'
                                                                             } group gap-4 flex w-full font-medium items-center rounded-md px-2 py-2 text-sm`}
                                                                     >
                                                                         <AiOutlineUserAdd />
                                                                         Remove Friend
+                                                                    </button> :
+                                                                    <button onClick={addFriend}
+                                                                        className={`${active ? 'bg-dark text-white' : 'text-gray-900'
+                                                                            } group gap-4 flex w-full font-medium items-center rounded-md px-2 py-2 text-sm`}
+                                                                    >
+                                                                        <AiOutlineUserAdd />
+                                                                        Add Friend
                                                                     </button>
 
                                                             )

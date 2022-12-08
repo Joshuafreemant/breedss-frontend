@@ -15,6 +15,7 @@ const Friend = () => {
     const userPosts = useSelector((state) => state.friendPosts)||[]
     const { id } = useParams()
 
+    
     let [friendData, setFriendData] = useState('')
     let [friendPost, setFriendPost] = useState([])
     const getUser = async () => {
@@ -32,7 +33,7 @@ const Friend = () => {
     }
 
     const getUserPosts = async () => {
-        const response = await fetch(process.env.REACT_APP_BASE_URL + `/posts/${id}/posts`, {
+        const response = await fetch(process.env.REACT_APP_BASE_URL + `posts/${id}/posts`, {
             method: 'get',
             headers: {
                 'Content-Type': 'application/json',
@@ -40,8 +41,8 @@ const Friend = () => {
             }
         })
         let postData = await response.json();
-        // setFriendPost(postData)
-
+        setFriendPost(postData)
+// console.log('postData',postData)
         
         dispatch(setFriendPosts({
             friendPosts: postData,
@@ -53,7 +54,7 @@ const Friend = () => {
     useEffect(() => {
         getUser()
         getUserPosts()
-    }, [])
+    }, [id])
 
     return (
         <div className='social-bg'>

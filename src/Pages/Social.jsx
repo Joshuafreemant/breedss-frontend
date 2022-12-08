@@ -61,7 +61,7 @@ const Social = () => {
             <section className="social-home">
                 <div>
                     <Profile />
-                    <Ads slot="8217530327568975"/>
+                    <Ads/>
                     
 
                 </div>
@@ -84,16 +84,16 @@ const Social = () => {
                     <br className='md:hidden' />
                     <br className='md:hidden' />
                     <br className='md:hidden' />
-                    <br className='md:hidden' />
-                    <br className='md:hidden' />
-                    <br className='md:hidden' />
-                    <br className='md:hidden' />
+                    {/* <br className='md:hidden' />
+                    <br className='md:hidden' /> */}
+                    {/* <br className='md:hidden' />
+                    <br className='md:hidden' /> */}
 
                 </div>
 
                 <div>
                     <Friends />
-                    <Ads slot="8217530327568975" />
+                    <Ads/>
 
                 </div>
 
