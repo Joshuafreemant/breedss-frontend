@@ -51,10 +51,12 @@ const Profile = () => {
       }
     }
     );
-    const updatedUser = await response.user.json();
-    console.log(updatedUser.updatedUser.bio)
+    const updatedUser = await response.json();
+    console.log('aye oooo',updatedUser.updatedUser)
 
     dispatch(setUser({ user: updatedUser.updatedUser }))
+    // dispatch(setFriends({ friends: updatedUser.userFriends.friends }))
+
     setBio('')
     closeModal()
   }

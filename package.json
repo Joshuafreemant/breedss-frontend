@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "private": true,
+  "homepage": ".",
   "dependencies": {
     "@ctrl/react-adsense": "^1.6.1",
     "@headlessui/react": "^1.7.4",
