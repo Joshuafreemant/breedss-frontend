@@ -70,6 +70,7 @@ const FooterMobile = () => {
         setFriendySearch(user.friends)
     }, [user])
 
+
     const handleSearch = (e) => {
         let search = e.target.value.toLowerCase();
         setFriendySearch(
@@ -430,7 +431,7 @@ const FooterMobile = () => {
                                             {friendySearch?.map((friend, i) => {
                                                 return (
 
-                                                    <Link to={'/friend/' + friend?._id}>
+                                                    <Link to={'/friend/' + friend?.userId}>
                                                         <div key={i} className="friends-div">
                                                             <div className="image-box overflow-hidden flex justify-center items-center ">
                                                                 <img className=' ' src={`${process.env.REACT_APP_IMG_URL}assets/${friend.picturePath}`} alt="" />
