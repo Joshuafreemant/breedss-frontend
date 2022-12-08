@@ -318,8 +318,8 @@ const Posts = ({ post }) => {
                 <div className="post__container container">
                     <div className="post__header">
                         <div className="post__user">
-                            <div className="user__picture overflow-hidden">
-                                <img src={`${process.env.REACT_APP_IMG_URL}assets/${post.userPicturePath}`} />
+                            <div className="user__picture overflow-hidden ">
+                                <img className='rounded-full w-[30px] h-[30px]' src={`${process.env.REACT_APP_IMG_URL}assets/${post.userPicturePath}`} />
 
                             </div>
                             <Link to={'/friend/' + post?.userId}>
