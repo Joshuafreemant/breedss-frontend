@@ -9,7 +9,7 @@ import { Dialog, Transition } from '@headlessui/react'
 
 
 const Profile = () => {
-  
+
   const user = useSelector((state) => state.user)
   const posts = useSelector((state) => state.posts)
   const allUser = useSelector((state) => state.allUsers)
@@ -52,7 +52,7 @@ const Profile = () => {
     }
     );
     const updatedUser = await response.json();
-    console.log('aye oooo',updatedUser.updatedUser)
+    console.log('aye oooo', updatedUser.updatedUser)
 
     dispatch(setUser({ user: updatedUser.updatedUser }))
     // dispatch(setFriends({ friends: updatedUser.userFriends.friends }))
@@ -60,6 +60,8 @@ const Profile = () => {
     setBio('')
     closeModal()
   }
+
+  
 
   return (
 
@@ -149,11 +151,18 @@ const Profile = () => {
             alt={user.picturePath}
             className='img'
           /> :
-          <img
-            src={`${process.env.REACT_APP_IMG_URL}assets/${user.picturePath}`}
-            alt={user.picturePath}
-            className='img'
-          />
+
+          <div className='edit-image hover:bg-red-500'>
+            <img
+              src={`${process.env.REACT_APP_IMG_URL}assets/${user.picturePath}`}
+              alt={user.picturePath}
+              className='img'
+            />
+            {/* <button
+            onClick={handleImageEdit}
+             className='cursor-pointer img z-50 ml-[50px] mt-[20px]' onClick={openBioField}><BsPencilSquare className='w-[20px]'/></button> */}
+
+          </div>
       }
 
 
@@ -178,19 +187,19 @@ const Profile = () => {
           </div>
 
           {
-              user.role === 'admin' ?
+            user.role === 'admin' ?
               <div className="user-info-stat">
-              <h3>Users</h3>
-              <h4 className='user-info-h4'>{allUser?.length || 0}</h4>
-            </div>
-                :
-                <div className="user-info-stat">
-            <h3>Follow</h3>
-            <h4 className='user-info-h4'>{user?.friends?.length || 0}</h4>
-          </div>
+                <h3>Users</h3>
+                <h4 className='user-info-h4'>{allUser?.length || 0}</h4>
+              </div>
+              :
+              <div className="user-info-stat">
+                <h3>Follow</h3>
+                <h4 className='user-info-h4'>{user?.friends?.length || 0}</h4>
+              </div>
 
-            }
-          
+          }
+
 
 
         </div>

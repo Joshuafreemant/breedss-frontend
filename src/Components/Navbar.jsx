@@ -516,12 +516,12 @@ const Navbar = () => {
 
 
                                     <li className="nav__items">
-                                        <Link to="/" className="font-normal flex justify-center items-center bg-white texts-dark px-3 py-2 rounded-md">
+                                        <Link to="/" className="font-normal flex justify-center items-center bg-white texts-dark px-3 py-1 rounded-md">
                                             Login
                                         </Link>
 
                                     </li>
-                                    <Link to="/create-account" className="font-normal  flex justify-center items-center bg-white texts-dark px-3 py-2 rounded-md">
+                                    <Link to="/create-account" className="font-normal  flex justify-center items-center bg-white texts-dark px-3 py-1 rounded-md">
                                         Register
                                     </Link>
                                 </ul>

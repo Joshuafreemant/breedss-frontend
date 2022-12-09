@@ -467,7 +467,7 @@ const Posts = ({ post }) => {
                     <div className="post__actions">
 
                         {
-                            post.comments.slice(0, 3).map((comment) => {
+                            post.comments.slice(0, 5).map((comment) => {
                                 return (
                                     <div key={comment._id} className="post__comments flex items-start   justify-start">
                                         <h5 className='truncate'>{comment.userId}: </h5>

@@ -6,6 +6,8 @@ import { Formik } from "formik";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { BsEyeSlash, BsEyeSlashFill } from "react-icons/bs";
+
 // import { setLogin } from "state";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -28,13 +30,21 @@ const initialValuesRegister = {
 
 
 const Register = () => {
+    const [isLoading, setIsLoading] = useState(false)
+    const [passwordShown, setPasswordShown] = useState(false)
 
+    const togglePassword = (e) => {
+        e.preventDefault()
+        // When the handler is invoked
+        // inverse the boolean state of passwordShown
+        setPasswordShown((prev) => !prev)
+    }
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
 
     const handleSubmit = async (values, onSubmitProps) => {
-
+        setIsLoading(true)
         const formData = new FormData();
         for (let value in values) {
             formData.append(value, values[value]);
@@ -53,6 +63,7 @@ const Register = () => {
 
 
         if (savedUser.error) {
+            setIsLoading(false)
             if (savedUser.error.includes('duplicate key error collection')) {
                 let notify = () => {
                     toast.error(('Email already in use'), {
@@ -95,7 +106,7 @@ const Register = () => {
                 }) => (
                     <form className="form mt-20" onSubmit={handleSubmit}>
                         <div className="form-groups">
-            <p className='mb-3 texts-dark'>Fill all Fields</p>
+                            <p className='mb-3 texts-dark'>Fill all Fields</p>
                             <label htmlFor="Fullname"></label>
                             <input
                                 type="text"
@@ -148,21 +159,42 @@ const Register = () => {
 
 
                         <div className="form-groups">
-                            <label htmlFor="Password"></label>
-                            <input
-                                type="password"
-                                className="form-input"
-                                placeholder="Password "
-                                onBlur={handleBlur}
-                                onChange={handleChange}
-                                value={values.password}
-                                name="password"
-                                error={
-                                    Boolean(touched.password) && Boolean(errors.password)
-                                }
-                                helperText={touched.password && errors.password}
-                            />
+                            <div className="border border-[#14505C] mb-4 rounded password flex items-center w-full justify-between px-3">
+
+                                <input
+                                    type={passwordShown ? "text" : "password"}
+
+                                    className="p-[10px] w-11/12"
+                                    placeholder="Password "
+                                    onBlur={handleBlur}
+                                    onChange={handleChange}
+                                    value={values.password}
+                                    name="password"
+                                    error={
+                                        Boolean(touched.password) && Boolean(errors.password)
+                                    }
+                                    helperText={touched.password && errors.password}
+                                />
+
+                                {passwordShown ? (
+                                    <button onClick={(e) => togglePassword(e)}>
+                                        <BsEyeSlash className='h-5 w-5' />
+                                    </button>
+
+                                ) : (
+                                    <button onClick={(e) => togglePassword(e)}>
+                                        <BsEyeSlashFill className='h-5 w-5' />
+                                    </button>
+                                )}
+
+                            </div>
                         </div>
+
+
+
+
+
+
 
 
 
@@ -193,8 +225,11 @@ const Register = () => {
                         </Dropzone>
 
                         <div className="form-groups">
+                            {
+                                isLoading ? <button className='form-button' type='button'>Loading...</button> :
+                                    <button className='form-button' type='submit'>Sign Up</button>
+                            }
 
-                            <button className='form-button' type='submit'>Sign Up</button>
                         </div>
 
                         <div>

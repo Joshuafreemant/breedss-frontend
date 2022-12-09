@@ -1,8 +1,10 @@
-import React,{useEffect,useReducer,useState} from 'react'
-import { Link,useNavigate } from "react-router-dom";
-import {useDispatch} from 'react-redux'
+import React, { useEffect, useReducer, useState } from 'react'
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux'
 import { setLogin } from '../store/index';
 import HorizontalAds from '../Components/HorizontalAds';
+
+import { BsEyeSlash, BsEyeSlashFill } from "react-icons/bs";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,12 +12,22 @@ import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
     const navigate = useNavigate()
     const dispatchs = useDispatch()
+    const [isLoading, setIsLoading] = useState(false)
+    const [passwordShown, setPasswordShown] = useState(false)
 
+
+    const togglePassword = (e) => {
+        e.preventDefault()
+        // When the handler is invoked
+        // inverse the boolean state of passwordShown
+        setPasswordShown((prev) => !prev)
+    }
     const [state, dispatch] = useReducer((state, action) => ({ ...state, ...action }),
-    { email: "", password: "" })
+        { email: "", password: "" })
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        setIsLoading(true)
         const formData = new FormData()
         formData.append('email', state.email);
         formData.append('password', state.password);
@@ -25,42 +37,42 @@ const Login = () => {
         let json = JSON.stringify(object);
 
 
-        const savedUser = await fetch(process.env.REACT_APP_BASE_URL +'auth/login', {
+        const savedUser = await fetch(process.env.REACT_APP_BASE_URL + 'auth/login', {
             method: 'POST',
-            mode:'cors',
+            mode: 'cors',
             body: json,
             headers: {
                 'Content-Type': 'application/json',
-               'Access-Control-Allow-Origin' : '*',
+                'Access-Control-Allow-Origin': '*',
 
             }
 
         })
         const loggedIn = await savedUser.json();
-       
-        if(loggedIn.token){
+
+        if (loggedIn.token) {
             dispatchs(setLogin({
-                user:loggedIn.user,
-                token:loggedIn.token
+                user: loggedIn.user,
+                token: loggedIn.token
             }))
             navigate('/')
         }
-       
-        else{
-            
+
+        else {
+            setIsLoading(false)
             let notify = () => {
                 toast.error((loggedIn.msg), {
-                  toastClassName: 'error'
+                    toastClassName: 'error'
                 })
-              };
-              notify()
+            };
+            notify()
         }
     }
-    
+
     return (
         <div className='login-body'>
-      <ToastContainer />
-           
+            <ToastContainer />
+
 
 
             <form action="" className="mt-40 mb-40 form" onSubmit={(e) => handleSubmit(e)}>
@@ -76,21 +88,35 @@ const Login = () => {
                 </div>
 
                 <div className="form-groups">
-                    <label htmlFor="Password"></label>
-                    <input
-                        type="password"
-                        className="form-input"
-                        placeholder="Password"
-                        value={state.password}
-                        onChange={(e) => dispatch({ password: e.target.value })}
-                    />
+                    <div className="password flex items-center w-full justify-between px-3">
+                        <input
+                            type={passwordShown ? "text" : "password"}
+                            className="p-[10px]"
+                            placeholder="Password"
+                            value={state.password}
+                            onChange={(e) => dispatch({ password: e.target.value })}
+                        />
+                        {passwordShown ? (
+                            <button onClick={(e) => togglePassword(e)}>
+                                <BsEyeSlash  className='h-5 w-5'/>
+                            </button>
+
+                        ) : (
+                            <button onClick={(e) => togglePassword(e)}>
+                                <BsEyeSlashFill className='h-5 w-5'/>
+                            </button>
+                        )}
+                    </div>
+
                 </div>
 
-                
+
                 <div className="form-groups">
 
-                    <button className='form-button' type='submit'>Log In</button>
-                
+                    {isLoading ?
+                        <button className='form-button' type='button'>Loading....</button> :
+                        <button className='form-button' type='submit'>Log In</button>}
+
                 </div>
                 <div className='links'>
                     <Link exact to="/forgot" className="login__in-link">
@@ -105,7 +131,7 @@ const Login = () => {
 
             </form>
             <div className="">
-            <HorizontalAds slot="8217530327568975" googleAdId="ca-pub-8217530327568975"/>
+                <HorizontalAds slot="8217530327568975" googleAdId="ca-pub-8217530327568975" />
 
 
             </div>

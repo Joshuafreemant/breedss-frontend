@@ -334,7 +334,7 @@ const FooterMobile = () => {
 
                                                 <div className="user-info-stat">
                                                     <h3>Friends</h3>
-                                                    <h4 className='user-info-h4'>{user?.friends?.formattedFriends?.length || 0}</h4>
+                                                    <h4 className='user-info-h4'>{user?.friends?.length || 0}</h4>
                                                 </div>
 
 
