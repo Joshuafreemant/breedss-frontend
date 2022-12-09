@@ -91,7 +91,7 @@ const Login = () => {
                     <div className="password flex items-center w-full justify-between px-3">
                         <input
                             type={passwordShown ? "text" : "password"}
-                            className="p-[10px]"
+                            className="p-[10px] w-11/12"
                             placeholder="Password"
                             value={state.password}
                             onChange={(e) => dispatch({ password: e.target.value })}
