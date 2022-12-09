@@ -61,40 +61,51 @@ const Social = () => {
             <section className="social-home">
                 <div>
                     <Profile />
-                    <div className="h-24 w-[300px] rounded-md bg-white">
+                    <div className="h-24 w-full  rounded-md bg-white">
                         <Advert slot="8217530327568975" googleAdId="ca-pub-8217530327568975" />
                     </div>
 
                 </div>
 
-                <div className='post-section pb-40 md:pb-0 md:mb-0'>
+                {
+                    !sortedPost.length ?
+                        <div className='post-section pb-40 md:pb-0 md:mb-0'>
+                            <PostSkeleton />
+                            <PostSkeleton />
+                            <PostSkeleton />
 
-                    {
-                        sortedPost.reverse().map((post, i) => {
-                            return (
-                                <Suspense fallback={<div key={i}><PostSkeleton /></div>}>
-                                    <Posts key={post._id} post={post} />
-                                </Suspense>
+                        </div> :
+
+                        <div className='post-section pb-40 md:pb-0 md:mb-0'>
+
+                            {
+                                sortedPost.reverse().map((post, i) => {
+                                    return (
+                                        <Suspense fallback={<div key={i}><PostSkeleton /></div>}>
+                                            <Posts key={post._id} post={post} />
+                                        </Suspense>
 
 
-                            )
+                                    )
 
-                        })
-                    }
-                    <br className='md:hidden' />
-                    <br className='md:hidden' />
-                    <br className='md:hidden' />
-                    <br className='md:hidden' />
-                    <br className='md:hidden' />
-                    <br className='md:hidden' />
-                    <br className='md:hidden' />
-                    {/* <br className='md:hidden' /> */}
+                                })
+                            }
+                            <br className='md:hidden' />
+                            <br className='md:hidden' />
+                            <br className='md:hidden' />
+                            <br className='md:hidden' />
+                            <br className='md:hidden' />
+                            <br className='md:hidden' />
+                            <br className='md:hidden' />
+                            {/* <br className='md:hidden' /> */}
 
-                </div>
+                        </div>
+
+                }
 
                 <div>
                     <Friends />
-                    <div className="h-24 w-[300px] rounded-md bg-white">
+                    <div className="h-24 w-full rounded-md bg-white adss">
                         <Advert slot="8217530327568975" googleAdId="ca-pub-8217530327568975" />
 
                     </div>

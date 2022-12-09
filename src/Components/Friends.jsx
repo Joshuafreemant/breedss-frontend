@@ -106,7 +106,7 @@ const Friends = () => {
 
 
 
-                        <div className="friends-box">
+                        <div className="friends-box h-[33vh]  overflow-y-scroll">
 
                             {friendySearch.map((friend, i) => {
                                 return (
