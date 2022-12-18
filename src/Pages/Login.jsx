@@ -80,7 +80,7 @@ const Login = () => {
                     <label htmlFor="Email"></label>
                     <input
                         type="email"
-                        className="form-input"
+                        className="form-input  outline-none"
                         Placeholder="Email Address"
                         value={state.email}
                         onChange={(e) => dispatch({ email: e.target.value })}
@@ -91,7 +91,7 @@ const Login = () => {
                     <div className="password flex items-center w-full justify-between px-3">
                         <input
                             type={passwordShown ? "text" : "password"}
-                            className="p-[10px] w-11/12"
+                            className="p-[10px] w-11/12 outline-none"
                             placeholder="Password"
                             value={state.password}
                             onChange={(e) => dispatch({ password: e.target.value })}

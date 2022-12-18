@@ -110,7 +110,7 @@ const Register = () => {
                             <label htmlFor="Fullname"></label>
                             <input
                                 type="text"
-                                className="form-input"
+                                className="form-input outline-none"
                                 Placeholder="Fullname "
                                 onBlur={handleBlur}
                                 onChange={handleChange}
@@ -126,7 +126,7 @@ const Register = () => {
                         <div className="form-groups">
                             <label htmlFor="Email"></label>
                             <input type="email"
-                                className="form-input"
+                                className="form-input outline-none"
                                 Placeholder="Email Address "
                                 onBlur={handleBlur}
                                 onChange={handleChange}
@@ -143,7 +143,7 @@ const Register = () => {
                             <label htmlFor="Username"></label>
                             <input
                                 type="text"
-                                className="form-input"
+                                className="form-input outline-none"
                                 Placeholder="Username "
                                 onBlur={handleBlur}
                                 onChange={handleChange}
@@ -164,7 +164,7 @@ const Register = () => {
                                 <input
                                     type={passwordShown ? "text" : "password"}
 
-                                    className="p-[10px] w-11/12"
+                                    className="p-[10px] w-11/12  outline-none"
                                     placeholder="Password "
                                     onBlur={handleBlur}
                                     onChange={handleChange}
