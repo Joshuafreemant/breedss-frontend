@@ -7,16 +7,16 @@ const PostSkeleton = () => {
             <section className="post">
                 <div className="post__container container">
                     <div className="post__header">
-                        <div className="post__user">
-                            <div className="user__picture overflow-hidden">
+                        <div className="post__user flex">
+                            <div className="w-[30px] h-[30px] rounded-full overflow-hidden">
                                 {/* <img src={`${process.env.REACT_APP_IMG_URL}assets/${post.userPicturePath}`} /> */}
-<div className="w-[90px] h-[90px] bg-gray-100 rounded"></div>
+                                <div className="w-[50px] h-[50px] bg-gray-100 rounded"></div>
                             </div>
-                            <p className=" bg-gray-100  w-9/12 h-[10px] rounded-xl">
-                           
-                           </p>
+                            <p className="ml-2 bg-gray-100  w-6/12 h-[10px] rounded-xl">
+
+                            </p>
                         </div>
-                        <div className="post__option relative">
+                        <div className="font-bold text-lg tracking-widest post__option relative">
 
 
 
@@ -27,24 +27,24 @@ const PostSkeleton = () => {
 
 
                     <div className="post__content">
-                        
+
 
                         <p className=" bg-gray-100 mt-2 w-8/12 h-[10px] rounded-xl">
-                           
+
                         </p>
-                        
+
                         <p className=" bg-gray-100 mt-2 w-9/12 h-[10px] rounded-xl">
-                           
+
                         </p>
 
-                        
+
                         <p className=" bg-gray-100 mt-2 w-10/12 h-[10px] rounded-xl">
-                           
+
                         </p>
 
-                        
+
                         <p className=" bg-gray-100 mt-2 w-full h-[10px] rounded-xl">
-                           
+
                         </p>
 
 
@@ -80,7 +80,7 @@ const PostSkeleton = () => {
 
         </div>
 
-       
+
     )
 }
 
