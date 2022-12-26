@@ -25,7 +25,7 @@ class Advert extends Component {
           style={style || { display: 'flex', textAlign: "center" }}
           data-ad-client={googleAdId}
           data-ad-slot={slot}
-          data-ad-test="on"
+          data-adtest="on"
           data-ad-format={format || "auto"}
           data-full-width-responsive="true"
         ></ins>
