@@ -106,7 +106,10 @@ const Social = () => {
                 <div>
                     <Friends />
                     <div className="h-24 w-full rounded-md bg-white adss">
-                        <Advert slot="8217530327568975" googleAdId="ca-pub-8217530327568975" />
+                        <Advert 
+                        slot="7806394673" 
+                        googleAdId="ca-pub-7292810486004926" 
+                        />
 
                     </div>
 

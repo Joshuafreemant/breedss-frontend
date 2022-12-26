@@ -22,10 +22,10 @@ class Advert extends Component {
       <div className={classNames} >
         <ins
           className="adsbygoogle  "
-          style={style || { display: 'flex', textAlign: "center" }}
-          data-ad-client={googleAdId}
-          data-ad-slot={slot}
-          data-adtest="on"
+          style={style || { display: 'block', textAlign: "center" }}
+          data-ad-client='7292810486004926'
+          data-ad-slot='7806394673'
+          data-ad-test="on"
           data-ad-format={format || "auto"}
           data-full-width-responsive="true"
         ></ins>
