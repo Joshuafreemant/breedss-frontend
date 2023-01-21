@@ -20,15 +20,18 @@ class Advert extends Component {
     const { classNames, slot, googleAdId, style, format } = this.props;
     return (
       <div className={classNames} >
-        <ins
-          className="adsbygoogle  "
-          style={style || { display: 'block', textAlign: "center" }}
-          data-ad-client='7292810486004926'
-          data-ad-slot='7806394673'
+       
+
+        <ins className="adsbygoogle"
+          style={{ display: 'inline-block', width: '300px', height: '350px' }}
+          data-ad-client="ca-pub-8217530327568975"
+          data-ad-slot="8937288805"
           data-ad-test="on"
-          data-ad-format={format || "auto"}
-          data-full-width-responsive="true"
-        ></ins>
+          // data-ad-format={format || "auto"}
+          // data-full-width-responsive="true"
+        >
+
+        </ins>
       </div>
     );
   }

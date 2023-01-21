@@ -21,13 +21,14 @@ class HorizontalAds extends Component {
     return (
       <div className={classNames} >
         <ins
-          className="adsbygoogle  "
+          className="adsbygoogle"
           style={style || { display: 'flex', textAlign: "center" }}
-          data-ad-client={googleAdId}
-          data-ad-slot={slot}
+          data-ad-client="ca-pub-8217530327568975"
+          data-ad-slot="5832629226"
           data-ad-test="on"
-          data-ad-format={format || "auto"}
+          data-ad-format="auto"
           data-full-width-responsive="true"
+       
         ></ins>
       </div>
     );
