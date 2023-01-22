@@ -61,7 +61,7 @@ const Social = () => {
             <section className="social-home">
                 <div>
                     <Profile />
-                    <div className="h-24 w-full  rounded-md bg-white">
+                    <div className=" w-full  rounded-md bg-white">
                         <Advert slot="8217530327568975" googleAdId="ca-pub-8217530327568975" />
                     </div>
 
@@ -105,7 +105,7 @@ const Social = () => {
 
                 <div>
                     <Friends />
-                    <div className="h-24 w-full rounded-md bg-white adss">
+                    <div className="w-full rounded-md bg-white adss">
                         <Advert 
                         slot="7806394673" 
                         googleAdId="ca-pub-7292810486004926" 
