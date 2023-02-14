@@ -444,7 +444,7 @@ const Navbar = () => {
                                         name=""
                                         className='outline-none'
                                         id="searchP"
-                                        autoFocus
+                                        
                                         placeholder="Search Pet Users"
                                     />
                                     {/* <button className='hidden lg:flex'> Search</button> */}

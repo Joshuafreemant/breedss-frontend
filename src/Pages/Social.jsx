@@ -105,7 +105,7 @@ const Social = () => {
 
                 <div>
                     <Friends />
-                    <div className="w-full rounded-md bg-white adss">
+                    <div className="w-full rounded-md bg-white ">
                         <Advert 
                         slot="7806394673" 
                         googleAdId="ca-pub-7292810486004926" 
@@ -122,4 +122,5 @@ const Social = () => {
     )
 }
 
+// the one on render.com
 export default memo(Social)

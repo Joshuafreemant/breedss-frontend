@@ -26,7 +26,7 @@ class Advert extends Component {
           style={{ display: 'inline-block', width: '300px', height: '207px' }}
           data-ad-client="ca-pub-8217530327568975"
           data-ad-slot="8937288805"
-          data-ad-test="on"
+          data-adtest="on"
           // data-ad-format={format || "auto"}
           // data-full-width-responsive="true"
         >
